@@ -14,7 +14,10 @@ title = input('name of file?\n')
 
 #parser
 def arrayCreate(table):
-  sparcer = table.find_all('tr')
+  if not (table.find_all('tr')):
+    sparcer = table.find_all('tbody')
+  else:
+    sparcer = table.find_all('tr')
   print(sparcer)
   insertTable = []
   for x in range(len(sparcer)):
